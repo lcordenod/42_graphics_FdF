@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sipatry <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lcordeno <lcordeno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/30 12:06:05 by sipatry           #+#    #+#             */
-/*   Updated: 2019/02/26 16:24:28 by lcordeno         ###   ########.fr       */
+/*   Updated: 2019/02/27 16:52:10 by lcordeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,14 @@
 # include <stdlib.h>
 # include <math.h>
 
-typedef	struct		s_base
+typedef struct		s_mlx
 {
-	int				**map;
-	int				width;
-	int				height;
-	int				xwin;
-	int				ywin;
-	int				center_x;
-	int				center_y;
-	int				z;
-	int				x;
-	int				y;
-	int				tx;
-	int				ty;
-	void			*img_ptr;
-	unsigned int	*str;
-	int				sw;
-	int				c;
-	int				mvx;
-	int				mvy;
-	int				zm;
-	int				xx;
-	int				yy;
-
-}					t_base;
+	void			*mlx_ptr;
+	void			*win_ptr;
+	int				bits_per_pixels;
+	int				size_line;
+	int				edian;
+}					t_mlx;
 
 typedef struct		s_margin
 {
@@ -89,14 +72,33 @@ typedef struct		s_pos
 	int				y2;
 }					t_pos;
 
-typedef struct		s_mlx
+typedef	struct		s_base
 {
-	void			*mlx_ptr;
-	void			*win_ptr;
-	int				bits_per_pixels;
-	int				size_line;
-	int				edian;
-}					t_mlx;
+	int				**map;
+	int				width;
+	int				height;
+	int				xwin;
+	int				ywin;
+	int				center_x;
+	int				center_y;
+	int				z;
+	int				x;
+	int				y;
+	int				tx;
+	int				ty;
+	void			*img_ptr;
+	unsigned int	*str;
+	int				sw;
+	int				c;
+	int				mvx;
+	int				mvy;
+	int				zm;
+	int				xx;
+	int				yy;
+	t_mlx			mlx;
+	t_place			resize;
+	t_margin		margins;
+}					t_base;
 
 int					check_format(char *arg);
 int					check_input(int **map);
@@ -110,6 +112,8 @@ void				replace_first_point(t_base base, t_margin *margins,
 void				replace_first_point_para(t_base base, t_margin *margins,
 					t_place *resize);
 void				center(t_base *base, t_place *resize);
+void				trace_x(t_base base, t_margin margins);
+void				trace_y(t_base base, t_margin margins);
 int					trace_c_x(t_base *base);
 int					trace_c_y(t_base *base);
 void				move(int key, t_base *base);
@@ -126,5 +130,9 @@ int					calcul_height(char	*str);
 int					calcul_width(char *str);
 int					create_map(char *str, t_base *base);
 int					new_string(char	*str, int *i);
+void				ft_redraw(t_base *base);
+void				line_size(t_base *base, t_margin *margins,
+t_place *resize);
+
 
 #endif

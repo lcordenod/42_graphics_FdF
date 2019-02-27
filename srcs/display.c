@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcordeno <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lcordeno <lcordeno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 12:58:09 by lcordeno          #+#    #+#             */
-/*   Updated: 2019/02/26 16:25:20 by lcordeno         ###   ########.fr       */
+/*   Updated: 2019/02/27 17:05:50 by lcordeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,13 +113,16 @@ int		trace_map(t_base *base)
 	base->img_ptr = mlx_new_image(mlx.mlx_ptr, base->xwin, base->ywin);
 	base->str = (unsigned int*)mlx_get_data_addr(base->img_ptr,
 	&(mlx.bits_per_pixels), &(mlx.size_line), &(mlx.edian));
+	base->mlx = mlx;
+	base->resize = resize;
+	base->margins = margins;
 	trace_x(*base, margins);
 	trace_y(*base, margins);
 	trace_c_x(base);
 	trace_c_y(base);
-	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, base->img_ptr, 0, 0);
 	mlx_hook(mlx.win_ptr, 17, 0, close_w, (void *)0);
 	mlx_key_hook(mlx.win_ptr, key_hook, base);
+	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, base->img_ptr, 0, 0);
 	mlx_loop(mlx.mlx_ptr);
 	return (0);
 }

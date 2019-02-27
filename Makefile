@@ -6,7 +6,7 @@
 #    By: lcordeno <lcordeno@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/22 09:45:37 by lcordeno          #+#    #+#              #
-#    Updated: 2019/02/26 16:07:18 by lcordeno         ###   ########.fr        #
+#    Updated: 2019/02/27 16:25:51 by lcordeno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRC = srcs/center.c \
 	  srcs/parsing_tools.c \
 	  srcs/trace.c \
 	  srcs/transform.c \
-	  srcs/zoom.c
+	  srcs/zoom.c \
+	  srcs/retrace.c
 
 INCLUDE = includes/fdf.h
 

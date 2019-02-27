@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcordeno <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lcordeno <lcordeno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 18:36:04 by lcordeno          #+#    #+#             */
-/*   Updated: 2019/02/07 10:52:08 by lcordeno         ###   ########.fr       */
+/*   Updated: 2019/02/27 16:27:32 by lcordeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	proj_switch(t_base *base)
 		base->sw = 1;
 	else
 		base->sw = 0;
-	trace_map(base);
+	ft_redraw(base);
 }
 
 void	display_center(t_base *base)
@@ -27,7 +27,7 @@ void	display_center(t_base *base)
 		base->c = 1;
 	else
 		base->c = 0;
-	trace_map(base);
+	ft_redraw(base);
 }
 
 void	reset(t_base *base)
@@ -37,7 +37,7 @@ void	reset(t_base *base)
 	base->c = 0;
 	base->zm = 1;
 	base->z = 1;
-	trace_map(base);
+	ft_redraw(base);
 }
 
 int		key_hook(int key, t_base *base)
