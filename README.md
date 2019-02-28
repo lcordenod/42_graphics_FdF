@@ -24,8 +24,8 @@ This is how my program represents it:
 
 ## Steps
 
-1. Do "make" at folder root level to compile program
-2. Execute program using "./fdf" and add a selected map from "test_maps" folder *(like "./fdf test_maps/42.fdf" for example)*
+1. Do `make` at folder root level to compile program
+2. Execute program using `./fdf` and add a selected map from "test_maps" folder *(like "./fdf test_maps/42.fdf" for example)*
 3. You can interact with the object using these bindings:
 
 ![screen shot 2019-02-27 at 6 04 26 pm](https://user-images.githubusercontent.com/45239771/53508526-37712200-3aba-11e9-820e-814db0165741.png)
@@ -41,7 +41,7 @@ For example, here is the map of France *(IGN_France_250_ASC_L93_OCEAN0_M.fdf)*:
 ## Make options
 
 Makefile allows you to do several "make" actions including:
-* make -> compile and create binary
-* make clean -> remove .o files
-* make fclean -> remove .o files and binary
-* make re -> make fclean + make
+* `make` -> compile and create binary
+* `make clean` -> remove .o files
+* `make fclean` -> remove .o files and binary
+* `make re` -> make fclean + make
