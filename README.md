@@ -12,6 +12,7 @@ My FdF project handles:
 * Move camera controls (scaled)
 * Reset and quit controls
 * 'z' altitude inc/dec controls
+* Input and error control
 
 *See more details about controls and bindings in Steps*
 
