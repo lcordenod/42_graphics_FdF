@@ -9,7 +9,7 @@ My FdF project handles:
 * 2 types projections (Isometric and Parallel) - default being Isometric (switch available)
 * Centered object position and display center option
 * Zoom in/out controls
-* Move camera controls
+* Move camera controls (scaled)
 * Reset and quit controls
 * 'z' altitude inc/dec controls
 
