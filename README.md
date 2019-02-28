@@ -1,6 +1,20 @@
 # 42_graphics_FdF
 FdF (Fil de Fer) is a graphical project in C, a "wire of a field" in 3D
 
+## Intro
+
+Bascicallly, I am given a set of positions represented by 0 (x, y) and a 'z' altitude given by values inferior or superior to 0. With these, I will draw lines accordingly and represent elevation given by 'z' to create a 3D effect.
+
+My FdF project handles:
+* 2 types projections (Isometric and Parallel) - default being Isometric (switch available)
+* Centered object position and display center option
+* Zoom in/out controls
+* Move camera controls
+* Reset and quit controls
+* 'z' altitude inc/dec controls
+
+*See more details about controls and bindings in Steps*
+
 Here is an example of an FdF representation computed from /test_maps/42.fdf.
 This is how my program represents it:
 
